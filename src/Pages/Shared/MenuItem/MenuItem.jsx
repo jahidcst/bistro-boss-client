@@ -9,6 +9,7 @@ const MenuItem = ({ item }) => {
             <p>{recipe}</p>
            </div>
            <p className="text-orange-500 ">${price}</p>
+           
         </div>
     );
 };
