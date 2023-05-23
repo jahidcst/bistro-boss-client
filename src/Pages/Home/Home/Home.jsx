@@ -1,8 +1,10 @@
+import Call from "../../../Components/call/Call";
 import About from "../About/About";
 import Banner from "../Banner/Banner";
 import Category from "../Category/Category";
 import Featured from "../Featured/Featured";
 import PopularMenu from "../Menu/PopularMenu";
+import Recommeds from "../Recommeds/Recommeds";
 import Review from "../Review/Review";
 
 
@@ -13,6 +15,8 @@ const Home = () => {
             <Category></Category>
             <About></About>
             <PopularMenu></PopularMenu>
+            <Call></Call>
+            <Recommeds></Recommeds>
             <Featured></Featured>
             <Review></Review>
         </div>
