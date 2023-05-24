@@ -8,6 +8,7 @@ import "swiper/css/navigation";
 import { Navigation } from "swiper";
 import { useEffect, useState } from "react";
 import { Rating } from "@smastrom/react-rating";
+// import { } from "react-icons/fa";
 
 
 const Review = () => {

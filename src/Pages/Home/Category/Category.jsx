@@ -28,25 +28,25 @@ const Category = () => {
                 modules={[Pagination]}
                 className="mySwiper mb-10"
             >
-                <SwiperSlide>
+                <SwiperSlide className="mb-16">
                     <img src={slide1} alt="" />
-                    <h2 className="text-2xl text-center uppercase -mt-20 font-semibold  text-white">Salads</h2>
+                    <h2 className="text-2xl text-center uppercase -mt-16 font-semibold  text-white">Salads</h2>
                 </SwiperSlide>
                 <SwiperSlide>
                     <img src={slide2} alt="" />
-                    <h2 className="text-2xl text-center text-white  uppercase -mt-20 font-semibold">Pizzas</h2>
+                    <h2 className="text-2xl text-center text-white  uppercase -mt-16 font-semibold">Pizzas</h2>
                 </SwiperSlide>
                 <SwiperSlide>
                     <img src={slide3} alt="" />
-                    <h2 className="text-2xl text-white text-center uppercase -mt-20  font-semibold">Soups</h2>
+                    <h2 className="text-2xl text-white text-center uppercase -mt-16  font-semibold">Soups</h2>
                 </SwiperSlide>
                 <SwiperSlide>
                     <img src={slide4} alt="" />
-                    <h2 className="text-2xl text-white text-center uppercase -mt-20  font-semibold">desserts</h2>
+                    <h2 className="text-2xl text-white text-center uppercase -mt-16  font-semibold">desserts</h2>
                 </SwiperSlide>
                 <SwiperSlide>
                     <img src={slide5} alt="" />
-                    <h2 className="text-2xl text-white text-center uppercase -mt-20  font-semibold">Salads</h2>
+                    <h2 className="text-2xl text-white text-center uppercase -mt-16  font-semibold">Salads</h2>
                 </SwiperSlide>
 
 
