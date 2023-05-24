@@ -16,11 +16,12 @@ const Cover = ({ img, title, description }) => {
                     <div className="max-w-md">
                         <h1 className="mb-6 text-5xl font-bold uppercase">{title}</h1>
                         <p className="mb-5 uppercase">{description}</p>
-
                     </div>
                 </div>
             </div>
+            
         </Parallax>
+        
 
 
     );
