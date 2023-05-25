@@ -1,13 +1,15 @@
-import { useEffect, useRef, useState } from "react";
-import { Form } from "react-router-dom";
-import { loadCaptchaEnginge, LoadCanvasTemplate,  validateCaptcha } from 'react-simple-captcha';
+import { useContext, useEffect, useRef, useState } from "react";
+import { Form, Link } from "react-router-dom";
+import { loadCaptchaEnginge, LoadCanvasTemplate, validateCaptcha } from 'react-simple-captcha';
+import { AuthContext } from "../../providers/AuthProvider";
 
 const Login = () => {
     const captchaRef = useRef(null);
-
     const [disable, setDisable] = useState(true);
-    useEffect (() =>{
-        loadCaptchaEnginge(6); 
+
+    const { signIn } = useContext(AuthContext);
+    useEffect(() => {
+        loadCaptchaEnginge(6);
     }, [])
 
     const handleLogin = event => {
@@ -15,14 +17,18 @@ const Login = () => {
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
-        console.log(email, password)
+        signIn(email, password)
+            .then(result => {
+                const user = result.user;
+                console.log(user)
+            })
     }
-    const handleValidate = () =>{
+    const handleValidate = () => {
         const user_captcha_value = captchaRef.current.value;
-        if(validateCaptcha(user_captcha_value)){
+        if (validateCaptcha(user_captcha_value)) {
             setDisable(false)
         }
-        else{
+        else {
             setDisable(true)
         }
     }
@@ -33,7 +39,6 @@ const Login = () => {
             <div className="hero-content flex-col lg:flex-row-reverse">
                 <div className="text-center md:w-1/2 lg:text-left">
                     <h1 className="text-5xl font-bold">Login now!</h1>
-                    <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
                 </div>
                 <div className="card w-1/2 max-w-sm shadow-2xl bg-base-100">
                     <Form onSubmit={handleLogin} className="card-body">
@@ -54,7 +59,7 @@ const Login = () => {
                         </div>
                         <div className="form-control">
                             <label className="label">
-                            <LoadCanvasTemplate />
+                                <LoadCanvasTemplate />
                             </label>
                             <input ref={captchaRef} type="text" name="captcha" placeholder="type the text above" className="input input-bordered" />
                             <button onClick={handleValidate} className="btn btn-outline btn-xs mt-3">Validate</button>
@@ -64,6 +69,7 @@ const Login = () => {
                             <input disabled={disable} className="btn btn-primary" type="submit" value="Login" />
                         </div>
                     </Form>
+                    <p className="text-center  mb-4"><small> New Here? <Link className="text-blue-600" to='/signin'> Create an account!</Link> </small></p>
                 </div>
             </div>
         </div>

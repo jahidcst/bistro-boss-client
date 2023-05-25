@@ -9,6 +9,7 @@ const Navber = () => {
         <li className="text-lg font-bold hover:text-green-500"><Link to='/menu'>Our Menu</Link></li>
         <li className="text-lg font-bold hover:text-green-500"><Link to='/order/salad'>Order Food</Link></li>
         <li className="text-lg font-bold hover:text-green-500"><Link to='/login'>Login</Link></li>
+        <li className="text-lg font-bold hover:text-green-500"><Link to='/signup'>Sign Up</Link></li>
         
         
     </>
