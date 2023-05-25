@@ -7,12 +7,13 @@ const Navber = () => {
         <li className="text-lg font-bold hover:text-green-500"><Link to='/'>Home</Link></li>
         <li className="text-lg font-bold hover:text-green-500"><Link to=''>Contact Us</Link></li>
         <li className="text-lg font-bold hover:text-green-500"><Link to='/menu'>Our Menu</Link></li>
+        <li className="text-lg font-bold hover:text-green-500"><Link to='/order'>Order Food</Link></li>
         
         
     </>
     return (
         <>
-            <div className="navbar max-w-screen-lg fixed z-10 p-2 text-white bg-opacity-30 bg-black">
+            <div className="navbar max-w-screen-lg fixed z-10  text-white bg-opacity-25 bg-black">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">

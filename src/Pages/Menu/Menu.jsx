@@ -31,9 +31,7 @@ const Menu = () => {
 
             <div>
                 <MenuCategory items={offered}></MenuCategory>
-                <div className='text-center -mt-3 mb-5'>
-                    <button className="btn btn-outline uppercase border-0 border-b-4  text-black">ORDER YOUR FAVOURITE FOOD</button>
-                </div>
+               
             </div>
             {/* dessert items */}
             <div>
@@ -43,9 +41,7 @@ const Menu = () => {
                     description="Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
                     coverImg={dessertImg}
                 ></MenuCategory>
-                <div className='text-center -mt-3 mb-5'>
-                    <button className="btn btn-outline uppercase border-0 border-b-4  text-black">ORDER YOUR FAVOURITE FOOD</button>
-                </div>
+                
             </div>
 
             {/* pizza items */}
@@ -56,9 +52,7 @@ const Menu = () => {
                     description="Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
                     coverImg={pizzaImg}
                 ></MenuCategory>
-                <div className='text-center -mt-3 mb-5'>
-                    <button className="btn btn-outline uppercase border-0 border-b-4  text-black">ORDER YOUR FAVOURITE FOOD</button>
-                </div>
+                
             </div>
 
             {/* salad items */}
@@ -69,9 +63,7 @@ const Menu = () => {
                     description="Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
                     coverImg={saladImg}
                 ></MenuCategory>
-                <div className='text-center -mt-3 mb-5'>
-                    <button className="btn btn-outline uppercase border-0 border-b-4  text-black">ORDER YOUR FAVOURITE FOOD</button>
-                </div>            </div>
+                </div>
 
             {/* soup items */}
             <div>
@@ -81,9 +73,6 @@ const Menu = () => {
                     description="Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
                     coverImg={soupImg}
                 ></MenuCategory>
-                <div className='text-center -mt-3 mb-5'>
-                    <button className="btn btn-outline uppercase border-0 border-b-4  text-black">ORDER YOUR FAVOURITE FOOD</button>
-                </div>
             </div>
         </div>
     );
