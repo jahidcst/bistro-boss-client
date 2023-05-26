@@ -1,17 +1,31 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../../providers/AuthProvider";
 
 
 const Navber = () => {
+    const { user, logOut } = useContext(AuthContext)
+    const handleLogout = () =>{
+        logOut()
+        .then(() =>{})
+        .catch(error => console.log(error))
+    }
 
     const navOptions = <>
         <li className="text-lg font-bold hover:text-green-500"><Link to='/'>Home</Link></li>
         <li className="text-lg font-bold hover:text-green-500"><Link to=''>Contact Us</Link></li>
         <li className="text-lg font-bold hover:text-green-500"><Link to='/menu'>Our Menu</Link></li>
         <li className="text-lg font-bold hover:text-green-500"><Link to='/order/salad'>Order Food</Link></li>
-        <li className="text-lg font-bold hover:text-green-500"><Link to='/login'>Login</Link></li>
-        <li className="text-lg font-bold hover:text-green-500"><Link to='/signup'>Sign Up</Link></li>
-        
-        
+
+        {
+            user ? <>
+            <button onClick={handleLogout} className="btn btn-ghost">LogOut</button>
+            </> : <>
+                <li className="text-lg font-bold hover:text-green-500"><Link to='/login'>Login</Link></li>
+            </>
+        }
+
+
     </>
     return (
         <>
@@ -29,7 +43,7 @@ const Navber = () => {
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
-                       {navOptions}
+                        {navOptions}
                     </ul>
                 </div>
                 <div className="navbar-end">
