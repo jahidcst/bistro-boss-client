@@ -5,11 +5,12 @@ import { AuthContext } from "../../../providers/AuthProvider";
 
 const Navber = () => {
     const { user, logOut } = useContext(AuthContext)
-    const handleLogout = () =>{
+    const handleLogout = () => {
         logOut()
-        .then(() =>{})
-        .catch(error => console.log(error))
+            .then(() => { })
+            .catch(error => console.log(error))
     }
+
 
     const navOptions = <>
         <li className="text-lg font-bold hover:text-green-500"><Link to='/'>Home</Link></li>
@@ -17,13 +18,7 @@ const Navber = () => {
         <li className="text-lg font-bold hover:text-green-500"><Link to='/menu'>Our Menu</Link></li>
         <li className="text-lg font-bold hover:text-green-500"><Link to='/order/salad'>Order Food</Link></li>
 
-        {
-            user ? <>
-            <button onClick={handleLogout} className="btn btn-ghost">LogOut</button>
-            </> : <>
-                <li className="text-lg font-bold hover:text-green-500"><Link to='/login'>Login</Link></li>
-            </>
-        }
+
 
 
     </>
@@ -47,9 +42,30 @@ const Navber = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <a className="btn">Get started</a>
+
+                    {
+                        user ?
+                            <>
+                                <div className="avatar mr-5 flex gap-4 items-center  tooltip tooltip-left tooltip-neutral" data-tip={user?.displayName}>
+                                    <div className="w-11 rounded-full ring">
+                                        <img src={user?.photoURL} alt="" />
+                                    </div>
+                                    <button className="btn btn-outline btn-error btn-sm mr-12" onClick={handleLogout}>LogOut</button>
+                                </div>
+
+                            </> :
+                            <>
+                                <div className="mr-10">
+                                    <button className="btn btn-outline text-white btn-sm mr-12"><Link to='/login'>Login</Link></button>
+                                </div>
+                            </>
+                    }
+
                 </div>
             </div>
+
+
+
         </>
     );
 };
