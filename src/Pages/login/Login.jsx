@@ -4,11 +4,13 @@ import { loadCaptchaEnginge, LoadCanvasTemplate, validateCaptcha } from 'react-s
 import { AuthContext } from "../../providers/AuthProvider";
 import { Helmet } from "react-helmet-async";
 import Swal from "sweetalert2";
+import {FcGoogle} from "react-icons/Fc"
+
 
 const Login = () => {
     const [disable, setDisable] = useState(true);
 
-    const { signIn } = useContext(AuthContext);
+    const { signIn, google } = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
 
@@ -16,6 +18,19 @@ const Login = () => {
     useEffect(() => {
         loadCaptchaEnginge(6);
     }, [])
+    
+
+    // handle google sign in
+    const handleGoogleSignIn = () =>{
+        google()
+        .then(result =>{
+            console.log(result.user);
+            navigate('/')
+        })
+        .catch(err =>{
+            console.log(err.massge);
+        })
+    }
 
     const handleLogin = event => {
         event.preventDefault();
@@ -85,12 +100,22 @@ const Login = () => {
                                 
                             </div>
                             <div className="form-control mt-6">
-
-                                <input disabled={disable} className="btn btn-primary" type="submit" value="Login" />
+                                <input 
+                               
+                               disabled={false}  
+                               className="btn btn-primary" type="submit" value="Countinue"/>
+                                
                             </div>
                         </Form>
                         <p className="text-center  mb-4"><small> New Here? <Link className="text-blue-600" to='/signup'> Create an account!</Link> </small></p>
+
+                        {/* google */}
+                       <button className="flex justify-center items-center border space-x-1 p-2 mx-5 border-gray-300 rounded-xl cursor-pointer" onClick={handleGoogleSignIn}>
+                        <FcGoogle size={32}></FcGoogle>
+                       <p>Continue With Google</p>
+                       </button>
                     </div>
+
                 </div>
             </div>
         </>
