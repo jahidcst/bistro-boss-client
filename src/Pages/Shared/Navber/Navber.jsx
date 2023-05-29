@@ -24,7 +24,7 @@ const Navber = () => {
         <li className="text-lg font-bold hover:text-green-500"><Link to='/order/salad'>Order Food</Link></li>
 
         <li>
-            <Link to='/'>
+            <Link to='/dashboard/mycart'>
                 <button className="btn gap-2">
                   <FaShoppingCart/>
                     <div className="badge badge-secondary">+{cart?.length || 0}</div>
